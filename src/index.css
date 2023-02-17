@@ -5,6 +5,11 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url('https://img.freepik.com/foto-gratis/fondo-azul-degradado-lujo-abstracto-azul-oscuro-liso-banner-estudio-vineta-negra_1258-54050.jpg?w=1800&t=st=1676234771~exp=1676235371~hmac=574af297569286253b7144901090c4595742327c275174c4d9f0dd35cad52254');
+   /* background-size: cover; */
+   background-repeat: no-repeat;
+   background-position: center;
+   background-attachment: fixed;
 }
 
 code {

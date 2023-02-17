@@ -1,0 +1,14 @@
+.input {
+    margin-right: 5px;
+    height: 30px;
+    border: 2px solid black;
+}
+
+.boton {
+    margin-right: 10px;
+    height: 25px;
+    background-color: rgb(34, 148, 110);
+    border: 1px solid black;
+    border-radius: 4px;
+    cursor: pointer;
+}

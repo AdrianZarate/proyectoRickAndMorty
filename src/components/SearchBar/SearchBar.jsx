@@ -10,19 +10,20 @@ function SearchBar({onSearch}) {
    } 
 
    return (
-      <div>
+      <div className={style.container}>
          <button 
+            className={style.btn} 
             onClick={() => onSearch(Math.floor(Math.random() * 826) + 1)}
-            className={style.boton}   
-            >random</button>
+         >RANDOM</button>
          <input 
-            type='search' 
-            className={style.input} 
+            placeholder="Personaje..." 
+            class={style.input} 
             value={character} 
+            type='search'
             onChange={handleInputChange}/>
          <button 
             onClick={() => onSearch(character)} 
-            className={style.boton}>Agregar</button>
+            className={style.btn}>AGREGAR</button>
       </div>
    );
 }

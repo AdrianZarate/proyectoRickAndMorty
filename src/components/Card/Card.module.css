@@ -7,6 +7,7 @@
     margin-bottom: 15px;
     background-color: #ffffff;
     border-radius: 5px;
+    max-width: 100%;
 }
 
 .cardTop {
@@ -21,16 +22,32 @@
     left: 10px;
     color: white;
     background-color: rgba(0, 0, 0, 0.274);
+    padding: 5px 10px;
+    border-radius: 3px;
+    max-width: calc(100% - 60px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .cardTop img {
-    border-radius: 5px  5px 0 0;
+    border-radius: 5px 5px 0 0;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
 }
 
 .cardBotton {
     display: grid;
     grid-template-columns: auto auto;
     font-size: small;
+    padding: 10px;
+    gap: 5px;
+}
+
+.cardBotton h2 {
+    margin: 5px 0;
+    text-align: center;
 }
 
 .btn {
@@ -49,7 +66,7 @@
 }
 
 .tooltip {
-    /* display: flex; */
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -57,13 +74,15 @@
     background-color: rgba(100,77,237,0.08);
     border-radius: 1.25em;
     transition: all 0.2s linear;
-    padding: 0;
+    padding: 8px;
     top: 5px;
     right: 5px;
     position: absolute;
     justify-self: end;
     cursor: pointer;
-   }
+    width: 35px;
+    height: 35px;
+}
    
 .tooltip:hover {
     box-shadow: 3.4px 2.5px 4.9px rgba(0, 0, 0, 0.025),
@@ -71,4 +90,78 @@
         17.5px 12.8px 25.3px rgba(0, 0, 0, 0.045),
         36.1px 26.3px 52.2px rgba(0, 0, 0, 0.055),
         99px 72px 143px rgba(0, 0, 0, 0.08);
+}
+
+/* Media queries para responsive */
+@media (max-width: 768px) {
+    .card {
+        width: 280px;
+        height: auto;
+        min-height: 340px;
+    }
+    
+    .cardTop h2 {
+        font-size: 0.9rem;
+        bottom: 8px;
+        left: 8px;
+        padding: 4px 8px;
+    }
+    
+    .cardBotton {
+        padding: 8px;
+        font-size: 0.85rem;
+    }
+    
+    .tooltip {
+        width: 32px;
+        height: 32px;
+        padding: 6px;
+    }
+}
+
+@media (max-width: 520px) {
+    .card {
+        width: 90%;
+        max-width: 300px;
+        min-width: 260px;
+    }
+    
+    .cardTop h2 {
+        font-size: 0.85rem;
+        max-width: calc(100% - 50px);
+    }
+    
+    .cardBotton {
+        grid-template-columns: 1fr 1fr;
+        gap: 3px;
+        padding: 6px;
+    }
+    
+    .cardBotton h2 {
+        font-size: 0.8rem;
+        margin: 3px 0;
+    }
+}
+
+@media (max-width: 360px) {
+    .card {
+        width: 95%;
+        min-width: 240px;
+    }
+    
+    .cardBotton {
+        grid-template-columns: 1fr;
+        text-align: left;
+    }
+    
+    .cardBotton h2 {
+        text-align: center;
+        font-size: 0.85rem;
+    }
+    
+    .tooltip {
+        width: 30px;
+        height: 30px;
+        padding: 5px;
+    }
 }

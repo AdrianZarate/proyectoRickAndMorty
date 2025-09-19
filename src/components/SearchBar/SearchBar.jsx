@@ -9,6 +9,19 @@ function SearchBar({onSearch}) {
       setCharacter(event.target.value)
    } 
 
+   const handleSearch = () => {
+      if (character.trim()) {
+         onSearch(character.trim());
+         setCharacter(''); // Limpiar el input después de buscar
+      }
+   }
+
+   const handleKeyPress = (event) => {
+      if (event.key === 'Enter') {
+         handleSearch();
+      }
+   }
+
    return (
       <div className={style.container}>
          <button 
@@ -16,14 +29,17 @@ function SearchBar({onSearch}) {
             onClick={() => onSearch(Math.floor(Math.random() * 826) + 1)}
          >RANDOM</button>
          <input 
-            placeholder="Personaje..." 
-            class={style.input} 
+            placeholder="ID o nombre del personaje..." 
+            className={style.input} 
             value={character} 
             type='search'
-            onChange={handleInputChange}/>
+            onChange={handleInputChange}
+            onKeyPress={handleKeyPress}
+         />
          <button 
-            onClick={() => onSearch(character)} 
-            className={style.btn}>AGREGAR</button>
+            onClick={handleSearch} 
+            className={style.btn}
+         >AGREGAR</button>
       </div>
    );
 }

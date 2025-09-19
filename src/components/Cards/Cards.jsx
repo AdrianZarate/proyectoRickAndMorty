@@ -7,6 +7,7 @@ function Cards(props) {
       <div className={style.containerCards}>
          {characters.map(({name, species, gender, image, id}) => {
             return <Card
+               key={id}
                name={name}
                species={species}
                gender={gender}

@@ -1,5 +1,29 @@
 .App {
    text-align: center;
-   /* display: grid; */
-   
+   min-height: 100vh;
+   /* Mantenemos el padding original pero lo hacemos responsive */
+}
+
+/* Media queries para responsive manteniendo el diseño original */
+@media (max-width: 768px) {
+   .App {
+      padding: 15px !important;
+   }
+}
+
+@media (max-width: 520px) {
+   .App {
+      padding: 10px !important;
+   }
+}
+
+@media (max-width: 360px) {
+   .App {
+      padding: 5px !important;
+   }
+}
+
+/* Asegurar que el contenido sea responsive */
+* {
+   box-sizing: border-box;
 }
